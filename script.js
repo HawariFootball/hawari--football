@@ -1,11 +1,13 @@
 function addPlayer() {
-  const name = document.getElementById("playerName").value;
-  const list = document.getElementById("playersList");
+  let name = document.getElementById("name").value;
+  let position = document.getElementById("position").value;
 
   if (name === "") return;
 
-  const li = document.createElement("li");
-  li.textContent = name;
+  let li = document.createElement("li");
+  li.innerHTML = `${name} - ${position} <button onclick="this.parentElement.remove()">❌</button>`;
 
-  list.appendChild(li);
+  document.getElementById("players").appendChild(li);
+
+  document.getElementById("name").value = "";
 }
