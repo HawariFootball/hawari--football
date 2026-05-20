@@ -1,4 +1,6 @@
-let players = [];
+let players = JSON.parse(localStorage.getItem("players")) || [];
+
+renderPlayers();
 
 function addPlayer() {
   let name = document.getElementById("name").value;
@@ -8,6 +10,7 @@ function addPlayer() {
 
   players.push({ name, position });
 
+  savePlayers();
   renderPlayers();
 
   document.getElementById("name").value = "";
@@ -27,7 +30,12 @@ function renderPlayers() {
 
 function removePlayer(index) {
   players.splice(index, 1);
+  savePlayers();
   renderPlayers();
+}
+
+function savePlayers() {
+  localStorage.setItem("players", JSON.stringify(players));
 }
 
 function divideTeams() {
