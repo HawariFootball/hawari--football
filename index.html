@@ -1,4 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>حـواري فوتبول</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>⚽ حواري فوتبول</h1>
+
+<input type="text" id="name" placeholder="اكتب اسمك">
+<select id="position">
+  <option>حارس</option>
+  <option>دفاع</option>
+  <option>وسط</option>
+  <option>هجوم</option>
+</select>
+
+<br><br>
+
+<button onclick="addPlayer()">تسجيل</button>
 <button onclick="divideTeams()">توزيع الفرق ⚽</button>
+
+<h2>اللاعبين:</h2>
+<ul id="players"></ul>
 
 <h2>الفرق:</h2>
 <div id="teams"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
